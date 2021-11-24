@@ -77,7 +77,7 @@ class CartItem extends StatelessWidget {
               ),
             ),
           ),
-          title: Text(cartItemEntity.product.title),
+          title: Text(cartItemEntity.title),
           subtitle: Text(cartItemEntity.price.toString()),
           trailing: Text("x ${cartItemEntity.quantity}"),
         ),

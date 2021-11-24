@@ -1,7 +1,7 @@
 import 'dart:convert';
 
 import 'package:flutter/cupertino.dart';
-import 'package:shop_app/api/api.dart';
+import 'package:shop_app/api/product_api.dart';
 
 class Product with ChangeNotifier {
   final String id;
@@ -20,8 +20,8 @@ class Product with ChangeNotifier {
     this.isFavorite = false,
   });
 
-  Future<bool> toggleFavorite() async {
-    final isUpdated = await Api().toggleFavorite(id, !isFavorite);
+  Future<bool> toggleFavorite(String? authToken) async {
+    final isUpdated = await ProductApi(authToken).toggleFavorite(id, !isFavorite);
     if (isUpdated) {
       isFavorite = !isFavorite;
       notifyListeners();

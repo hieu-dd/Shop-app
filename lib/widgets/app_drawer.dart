@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:shop_app/screens/orders_screen.dart';
+import 'package:shop_app/screens/product_overview_screen.dart';
 import 'package:shop_app/screens/user_products_screen.dart';
 
 class AppDrawer extends StatelessWidget {
@@ -15,9 +16,10 @@ class AppDrawer extends StatelessWidget {
           ),
           InkWell(
             onTap: () {
-              Navigator.of(context).pushReplacementNamed("/");
+              Navigator.of(context)
+                  .pushReplacementNamed(ProductOverviewScreen.routeName);
             },
-            child:const ListTile(
+            child: const ListTile(
               leading: Icon(Icons.shop),
               title: Text("Shops"),
             ),
@@ -27,7 +29,7 @@ class AppDrawer extends StatelessWidget {
               Navigator.of(context)
                   .pushReplacementNamed(OrdersScreen.routeName);
             },
-            child:const ListTile(
+            child: const ListTile(
               leading: Icon(Icons.payment),
               title: Text("Orders"),
             ),
@@ -37,7 +39,7 @@ class AppDrawer extends StatelessWidget {
               Navigator.of(context)
                   .pushReplacementNamed(UserProductsScreen.routeName);
             },
-            child:const ListTile(
+            child: const ListTile(
               leading: Icon(Icons.supervisor_account),
               title: Text("UserProducts"),
             ),

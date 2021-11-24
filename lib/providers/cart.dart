@@ -1,25 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:shop_app/providers/product.dart';
-import 'package:shop_app/providers/products.dart';
 
 class CartItemEntity {
   String id;
   String productId;
   double quantity;
+  String title = '';
+  double price = 0.0;
 
   CartItemEntity({
     required this.id,
     required this.productId,
     this.quantity = 1,
   });
-
-  Product get product {
-    return Products().findById(productId);
-  }
-
-  double get price {
-    return Products().findById(productId).price;
-  }
 
   CartItemEntity copy(double quantity) {
     return CartItemEntity(
